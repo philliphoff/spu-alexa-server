@@ -16,6 +16,12 @@
     "typescript": "^2.2.2"
   },
   "dependencies": {
-    "alexa-app-server": "^3.0.1"
+    "alexa-app-server": "^3.0.1",
+    "spu-alexa": "^1.0.0"
+  },
+  "alexa": {
+    "apps": [
+      "spu-alexa"
+    ]
   }
 }
