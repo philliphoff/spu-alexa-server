@@ -98,7 +98,7 @@ selectNodeVersion () {
 # Deployment
 # ----------
 
-echo Handling node.js deployment.
+echo "Handling Node.js deployment..."
 
 # 1. KuduSync
 if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
@@ -121,4 +121,4 @@ fi
 gulp
 
 ##################################################################################################################################
-echo "Finished successfully."
+echo "Deployment complete."
