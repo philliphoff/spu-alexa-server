@@ -117,7 +117,10 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd - > /dev/null
 fi
 
-# 4. Build Hugo website
+# 4. Link Alex apps
+gulp Link
+
+# 5. Build server
 gulp
 
 ##################################################################################################################################
