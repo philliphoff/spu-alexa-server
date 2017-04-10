@@ -117,12 +117,19 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd - > /dev/null
 fi
 
-# 4. Link Alex apps and build server
+# 4. Build server
 if [ -e "$DEPLOYMENT_TARGET/gulpfile.js" ]; then
   cd "$DEPLOYMENT_TARGET"
-  eval ./node_modules/.bin/gulp link
-  exitWithMessageOnError "gulp link failed"
   eval ./node_modules/.bin/gulp
+  exitWithMessageOnError "gulp failed"
+  cd - > /dev/null
+fi
+
+# 5. Copy apps
+if [ -e "$DEPLOYMENT_TARGET/gulpfile.js" ]; then
+  cd "$DEPLOYMENT_TARGET"
+  eval mkdir apps
+  eval xcopy ./node_modules/spu-alexa apps/spu-alexa /O /X /E /H /K
   exitWithMessageOnError "gulp failed"
   cd - > /dev/null
 fi
