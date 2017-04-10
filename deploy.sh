@@ -117,11 +117,15 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd - > /dev/null
 fi
 
-# 4. Link Alex apps
-"$DEPLOYMENT_TARGET/node_modules/.bin/gulp" "link"
-
-# 5. Build server
-"$DEPLOYMENT_TARGET/node_modules/.bin/gulp"
+# 4. Link Alex apps and build server
+if [ -e "$DEPLOYMENT_TARGET/gulpfile.js" ]; then
+  cd "$DEPLOYMENT_TARGET"
+  eval ./node_modules/.bin/gulp link
+  exitWithMessageOnError "gulp link failed"
+  eval ./node_modules/.bin/gulp
+  exitWithMessageOnError "gulp failed"
+  cd - > /dev/null
+fi
 
 ##################################################################################################################################
-echo "Deployment completed."
+echo "Deployment complete."
