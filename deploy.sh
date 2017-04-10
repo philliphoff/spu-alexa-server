@@ -129,7 +129,7 @@ fi
 if [ -e "$DEPLOYMENT_TARGET/gulpfile.js" ]; then
   cd "$DEPLOYMENT_TARGET"
   eval mkdir apps
-  eval xcopy ./node_modules/spu-alexa apps/spu-alexa /O /X /E /H /K
+  eval xcopy "./node_modules/spu-alexa" "apps/spu-alexa" /E /I
   exitWithMessageOnError "gulp failed"
   cd - > /dev/null
 fi
