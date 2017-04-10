@@ -118,10 +118,10 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
 fi
 
 # 4. Link Alex apps
-gulp Link
+./node_modules/.bin/gulp Link
 
 # 5. Build server
-gulp
+./node_modules/.bin/gulp
 
 ##################################################################################################################################
 echo "Deployment complete."
