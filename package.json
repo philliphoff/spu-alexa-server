@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@glimpse/glimpse-node": "^0.18.9",
     "@types/node": "^7.0.12",
     "delete": "^0.3.2",
     "gulp": "^3.9.1",
@@ -18,7 +19,7 @@
   },
   "dependencies": {
     "alexa-app-server": "^3.0.1",
-    "spu-alexa": "^1.0.0"
+    "spu-alexa": "^1.1.0"
   },
   "alexa": {
     "apps": [
