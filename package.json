@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "alexa-app-server": "^3.0.1",
-    "spu-alexa": "^1.1.0"
+    "spu-alexa": "^1.2.0"
   },
   "alexa": {
     "apps": [
