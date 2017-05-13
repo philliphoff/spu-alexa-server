@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@glimpse/glimpse-node": "^0.18.9",
+    "@glimpse/glimpse": "^0.20.9",
     "@types/node": "^7.0.12",
     "delete": "^0.3.2",
     "gulp": "^3.9.1",

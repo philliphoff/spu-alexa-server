@@ -1,4 +1,4 @@
-const glimpse = require('@glimpse/glimpse-node');
+import * as glimpse from '@glimpse/glimpse';
 
 glimpse.init();
 
