@@ -19,12 +19,17 @@ function parseBoolean(value: string | undefined, defaultValue: boolean): boolean
 }
 
 if (parseBoolean(process.env.SPU_GLIMPSE, false)) {
+    console.log('Starting Glimpse...');
+
     const glimpse = require('@glimpse/glimpse');
 
     glimpse.init();
 }
 
 import * as AlexaAppServer from 'alexa-app-server';
+
+console.log('Starting Alexa app server...');
+
 AlexaAppServer.start({
     debug: parseBoolean(process.env.SPU_DEBUG, false),
     port: process.env.PORT || 8080,
