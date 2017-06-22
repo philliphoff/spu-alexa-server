@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@glimpse/glimpse": "^0.20.9",
     "@types/node": "^7.0.12",
     "delete": "^0.3.2",
     "gulp": "^3.9.1",
@@ -18,6 +17,7 @@
     "typescript": "^2.2.2"
   },
   "dependencies": {
+    "@glimpse/glimpse": "^0.21.5",
     "alexa-app-server": "^3.0.1",
     "spu-alexa": "^1.2.0"
   },

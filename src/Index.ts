@@ -1,4 +1,3 @@
-import * as AlexaAppServer from 'alexa-app-server';
 import * as process from 'process';
 
 function parseBoolean(value: string | undefined, defaultValue: boolean): boolean {
@@ -19,6 +18,13 @@ function parseBoolean(value: string | undefined, defaultValue: boolean): boolean
     return defaultValue;
 }
 
+if (parseBoolean(process.env.SPU_GLIMPSE, false)) {
+    const glimpse = require('@glimpse/glimpse');
+
+    glimpse.init();
+}
+
+import * as AlexaAppServer from 'alexa-app-server';
 AlexaAppServer.start({
     debug: parseBoolean(process.env.SPU_DEBUG, false),
     port: process.env.PORT || 8080,
