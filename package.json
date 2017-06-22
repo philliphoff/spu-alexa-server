@@ -1,6 +1,6 @@
 {
   "name": "spu-alexa-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "lib/Index.js",
   "scripts": {
@@ -19,7 +19,8 @@
   "dependencies": {
     "@glimpse/glimpse": "^0.21.5",
     "alexa-app-server": "^3.0.1",
-    "spu-alexa": "^1.2.1"
+    "debug": "^2.6.8",
+    "spu-alexa": "^1.3.1"
   },
   "alexa": {
     "apps": [

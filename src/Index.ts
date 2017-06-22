@@ -18,17 +18,24 @@ function parseBoolean(value: string | undefined, defaultValue: boolean): boolean
     return defaultValue;
 }
 
-if (parseBoolean(process.env.SPU_GLIMPSE, false)) {
-    console.log('Starting Glimpse...');
+const useGlimpse = parseBoolean(process.env.SPU_GLIMPSE, false);
 
+if (useGlimpse) {
     const glimpse = require('@glimpse/glimpse');
 
     glimpse.init();
 }
 
 import * as AlexaAppServer from 'alexa-app-server';
+import * as debug from 'debug';
 
-console.log('Starting Alexa app server...');
+const spuServerDebug = debug('spu:server');
+
+if (useGlimpse) {
+    spuServerDebug('Glimpse is enabled.');
+}
+
+spuServerDebug('Starting Alexa app server...');
 
 AlexaAppServer.start({
     debug: parseBoolean(process.env.SPU_DEBUG, false),
